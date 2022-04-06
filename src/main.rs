@@ -59,9 +59,9 @@ fn main() {
 
 	let shape = [
 		Vertex::new([0.5, 0.5], [1.0, 1.0]),
-		Vertex::new([-0.5, 0.5], [0.0, -1.0]),
-		Vertex::new([-0.5, -0.5], [-1.0, 0.0]),
-		Vertex::new([0.5, -0.5], [-1.0, 0.0])
+		Vertex::new([-0.5, 0.5], [0.0, 1.0]),
+		Vertex::new([-0.5, -0.5], [0.0, 0.0]),
+		Vertex::new([0.5, -0.5], [1.0, 0.0])
 	];
 
 
@@ -90,7 +90,7 @@ fn main() {
 
 		*control_flow = glutin::event_loop::ControlFlow::WaitUntil(
 			time::Instant::now() +
-			time::Duration::from_nanos((1e9 / (FPS as f64)) as u64)
+			time::Duration::from_nanos((1e9 / FPS as f64) as _)
 		);
 
 		let uniforms = uniform! {
